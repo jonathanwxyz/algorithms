@@ -1,2 +1,1 @@
-# go-algorithms
-algorithms written in go to challenge myself
+Writing algorithms to challenge myself and learn new languages

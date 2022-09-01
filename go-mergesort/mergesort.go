@@ -3,10 +3,24 @@ package main
 import (
 	"sync"
     "runtime"
+    "math/rand"
 )
 
 type Comparable interface {
 	string | int | int8 | int16 | int32 | int64 | float32 | float64 | uint | uint8 | uint16 | uint32 | uintptr
+}
+
+func random_slice(n int) []int {
+    arr := make([]int, 0, n)
+    for i := 0; i<n; i++ {
+        arr = append(arr, rand.Int())
+    }
+    return arr
+}
+
+
+func main() {
+    MergeSort(random_slice(100_000_000))
 }
 
 func MergeSort[C Comparable](arr []C) []C {
